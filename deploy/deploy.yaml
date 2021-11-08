@@ -1,43 +1,20 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: security-base-deploy-pipe
+  name: nginx-
   namespace: security-base
-  labels:
-    app: security-base-deploy-pipe
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: security-base-deploy-pipe
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: security-base-deploy-pipe
+        app: nginx
     spec:
       containers:
-        - name: security-base1
-          image: 'sungpingdocker/security-base:v1'
-          ports:
-            - name: http-8030
-              containerPort: 8030
-              protocol: TCP
-      restartPolicy: Always
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: security-base-pipe-svc
-  namespace: security-base
-  labels:
-    app: security-base-pipe-svc
-spec:
-  ports:
-    - name: http-8030
-      protocol: TCP
-      port: 8030
-      targetPort: 8030
-  selector:
-    app: security-base-deploy-pipe
-  type: NodePort
-  externalTrafficPolicy: Local
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
