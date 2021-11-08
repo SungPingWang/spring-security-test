@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>系統主頁</title>
+  <link href="/security/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/security/css/header.css" rel="stylesheet">
+  <link href="/security/css/pricing.css" rel="stylesheet">
+</head>
+
+<body th:fragment="header">
+  <!-- 
+  	p-3：數字越大好像bar就越窄
+  	my-2：數字越大好像bar就越窄(跟上面那個分不大清楚)
+  	px-md-4：左邊的第一個字對最右邊的距離
+  -->
+  <div class="d-flex flex-column flex-md-row align-items-center p-6 px-md-4 mb-8 bg-light text-dark border-bottom shadow-sm">
+    <h5 class="my-2 mr-md-auto font-weight-normal">養殖漁業管理系統:行政院農業委員會漁業署</h5>
+    <a class="p-1 text-dark" href="#">修改密碼</a>
+    <span class="p-1">｜</span>
+    <a class="p-1 text-dark" href="/security/logout">登出</a>
+  </div>
+  <div class="d-flex flex-column flex-md-row align-items-center p-1 px-md-4 mb-1 bg-white border-bottom shadow-sm">
+    <nav class="my-10 my-md-10 mr-md-8">
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          系統維護
+        </button>
+        <div class="dropdown-menu">
+          <span sec:authentication="name" class="text-dark dropdown-item">USERNAME</span>
+          <div class="dropdown-divider"></div>
+          <span sec:authentication="principal.authorities" class="text-dark dropdown-item">ROLE</span>
+          <div class="dropdown-divider"></div>
+          <a sec:authorize="hasRole('ROLE_ADMIN')" class="text-dark dropdown-item" href="/security/management/getUsersIP">在線用戶們</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          養殖漁業<br>放養量申(查)報
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          養殖漁業<br>登記證
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          養殖漁業<br>地理資訊
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          漁船運搬<br>養殖活魚管理
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          漁業權<br>核發管理
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          鰻苗捕撈量<br>調查管理
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          觀賞水族<br>出口登入管理
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <span class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="true">
+          外銷產值水產品<br>電子化管理
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Something</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </span>
+      <!-- <a class="p-2 text-dark" href="#">Pricing</a> -->
+    </nav>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/security/assets/dist/js/jquery-3.5.1.slim.min.js"><\/script>')</script>
+  <script src="/security/assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(function () {
+      'use strict'
+
+      $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+      })
+    })
+  </script>
+</body>
+
+</html>

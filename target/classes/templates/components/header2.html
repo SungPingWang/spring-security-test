@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>系統主頁</title>
+</head>
+
+<body th:fragment="header2">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/security/css/header2/style.css">
+  <div class="d-flex flex-column flex-md-row align-items-center p-6 px-md-4 mb-8 bg-light text-secondary border-bottom shadow-sm">
+    <h5 class="my-2 mr-md-auto font-weight-normal">養殖漁業管理系統:行政院農業委員會漁業署</h5>
+    <a class="p-1 text-dark" href="#">修改密碼</a>
+    <span class="p-1">｜</span>
+    <a class="p-1 text-dark" href="/security/logout">登出</a>
+  </div>
+  <section class="ftco-section">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">系統維護</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <span sec:authentication="name" class="text-dark dropdown-item">USERNAME</span>
+	            <div class="dropdown-divider"></div>
+	            <span sec:authentication="principal.authorities" class="text-dark dropdown-item">ROLE</span>
+	            <div class="dropdown-divider"></div>
+	            <a sec:authorize="hasRole('ROLE_ADMIN')" class="text-dark dropdown-item" href="/security/management/getUsersIP">在線用戶們</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">養殖漁業<br>放養量申(查)報</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">養殖漁業<br>登記證</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">養殖漁業<br>地理資訊</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">漁船運搬<br>養殖活魚管理</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">漁業權<br>核發管理</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">鰻苗捕撈量<br>調查管理</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">觀賞水族<br>出口登入管理</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown border-left border-right">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">外銷產值水產品<br>電子化管理</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+            <!-- <li class="nav-item"><a href="#" class="nav-link">Blog</a></li> -->
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+  </section>
+  <div class="d-flex flex-column flex-md-row align-items-center p-6 px-md-4 mb-8 text-secondary border-bottom shadow-sm " style="background-color:#fffacd;">
+    <h5 class="my-1 mr-md-auto font-weight-normal" style="font-size: 15px;">步驟A > 步驟B > 步驟C</h5>
+  </div>
+  <script src="/security/assets/dist/js/jquery.min.js"></script>
+  <script src="/security/assets/dist/js/popper.min.js"></script>
+  <script src="/security/assets/dist/js/bootstrap.min.js"></script>
+  <script src="/security/js/header2/main.js"></script>
+</body>
+
+</html>
