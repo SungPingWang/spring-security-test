@@ -7,7 +7,7 @@ metadata:
     app: security-base-deploy-pipe
   annotations:
     deployment.kubernetes.io/revision: '3'
-    kubesphere.io/alias-name: security-base-deploy
+    kubesphere.io/alias-name: security-base-deploy-pipe
     kubesphere.io/creator: admin
     kubesphere.io/description: 資安規則測試小系統
 spec:
@@ -52,7 +52,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: security-base-pipe-svc
-  namespace: security-base-pipe
+  namespace: security-base
   labels:
     app: security-base-pipe-svc
   annotations:
