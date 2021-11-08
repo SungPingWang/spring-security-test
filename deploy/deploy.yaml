@@ -1,10 +1,10 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: security-base-deploy
+  name: security-base-deploy-pipe
   namespace: security-base
   labels:
-    app: security-base-deploy
+    app: security-base-deploy-pipe
   annotations:
     deployment.kubernetes.io/revision: '3'
     kubesphere.io/alias-name: security-base-deploy
@@ -14,12 +14,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: security-base-deploy
+      app: security-base-deploy-pipe
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: security-base-deploy
+        app: security-base-deploy-pipe
     spec:
       containers:
         - name: security-base1
@@ -51,12 +51,12 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: security-base-svc
-  namespace: security-base
+  name: security-base-pipe-svc
+  namespace: security-base-pipe
   labels:
-    app: security-base-svc
+    app: security-base-pipe-svc
   annotations:
-    kubesphere.io/alias-name: security-base-svc
+    kubesphere.io/alias-name: security-base-pipe-svc
     kubesphere.io/creator: admin
     kubesphere.io/description: |-
       資安規則測試小系統
@@ -68,7 +68,7 @@ spec:
       port: 8030
       targetPort: 8030
   selector:
-    app: security-base-deploy
+    app: security-base-deploy-pipe
   type: NodePort
   sessionAffinity: None
   externalTrafficPolicy: Local
