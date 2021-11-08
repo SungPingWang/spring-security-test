@@ -1,0 +1,6 @@
+server:
+  port: 8030
+  servlet:
+    context-path: /security
+    session:      timeout: 15m
+      #https://www.baeldung.com/spring-security-session
